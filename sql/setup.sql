@@ -7,6 +7,12 @@ CREATE TABLE cats (
     coat TEXT NOT NULL
 );
 
+INSERT INTO
+    cats (name, age, coat)
+VALUES
+    ('Eowyn', 8, 'Calico'),
+    ('Meena', 1, 'Tortoise-shell');
+
 CREATE TABLE books (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title TEXT NOT NULL,
