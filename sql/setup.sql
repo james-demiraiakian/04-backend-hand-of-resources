@@ -11,13 +11,24 @@ INSERT INTO
     cats (name, age, coat)
 VALUES
     ('Eowyn', 8, 'Calico'),
-    ('Meena', 1, 'Tortoise-shell');
+    ('Meena', 1, 'Tortoise-shell'),
+    ('Froderic', 1, 'Black'),
+    ('Ducky', 12, 'Orange Tabby');
 
 CREATE TABLE books (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title TEXT NOT NULL,
-    author TEXT NOT NULL
+    author TEXT NOT NULL,
+    book_number INT NOT NULL CHECK (series_length > 0),
+    series_length INT NOT NULL CHECK (series_length > 0)
 );
+
+INSERT INTO
+    books (title, author, book_number, series_length)
+VALUES
+    ('The Last Wish', 'Andrzej Sapkowski', 1, 1),
+    ('Lord of Chaos', 'Robert Jordan', 7, 14),
+    ('Jonathan Strange and Mr. Norell', 'Susanna Clarke', 1, 1);
 
 CREATE TABLE schools (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

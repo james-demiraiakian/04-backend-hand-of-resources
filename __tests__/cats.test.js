@@ -4,7 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 const Cat = require('../lib/models/Cat');
 
-describe('04-backend-hand-of-resources routes', () => {
+describe('04-backend-hand-of-resources cats routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
