@@ -35,8 +35,8 @@ describe('04-backend-hand-of-resources routes', () => {
   });
 
   test('fetch only one (1) cat by id', async () => {
-    const expected = await Cat.findById(3);
-    const res = await app.get(`/api/v1/cats/${expected.id}`);
+    const expected = await Cat.findById(1);
+    const res = await request(app).get(`/api/v1/cats/${expected.id}`);
 
     expect(res.body).toEqual({ ...expected });
   });
@@ -50,19 +50,19 @@ describe('04-backend-hand-of-resources routes', () => {
   test('update a cat by its id', async () => {
     const expected = {
       id: expect.any(Number),
-      name: 'Test Cat',
-      age: 1234,
-      coat: 'Cat Coat Colors have been changed',
+      name: 'Eowyn',
+      age: 8,
+      coat: 'White/Calico',
     };
     const res = await request(app)
-      .patch('/api/v1/cats/3')
-      .send({ coat: 'Cat Coat Colors have been changed' });
+      .patch('/api/v1/cats/1')
+      .send({ coat: 'White/Calico' });
 
     expect(res.body).toEqual(expected);
   });
 
   test('delete the test cat', async () => {
-    const expected = await Cat.findById(3);
+    const expected = await Cat.findById(1);
     const res = await request(app).delete(`/api/v1/cats/${expected.id}`);
 
     expect(res.body).toEqual(expected);
