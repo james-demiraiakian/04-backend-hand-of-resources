@@ -44,4 +44,26 @@ describe('01-backend-hand-of-resources books route', () => {
 
     expect(res.status).toEqual(404);
   });
+
+  test('update a book by id', async () => {
+    const expected = {
+      id: expect.any(Number),
+      title: 'The Witcher: The Last Wish',
+      author: 'Andrzej Sapkowski',
+      bookNumber: 1,
+      seriesLength: 6,
+    };
+    const res = await request(app)
+      .patch('/api/v1/books/1')
+      .send({ title: 'The Witcher: The Last Wish' });
+
+    expect(res.body).toEqual(expected);
+  });
+
+  test('delete a book', async () => {
+    const expected = await Book.findById(1);
+    const res = await request(app).delete(`/api/v1/books/${expected.id}`);
+
+    expect(res.body).toEqual(expected);
+  });
 });

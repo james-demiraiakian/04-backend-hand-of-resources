@@ -26,7 +26,7 @@ CREATE TABLE books (
 INSERT INTO
     books (title, author, book_number, series_length)
 VALUES
-    ('The Last Wish', 'Andrzej Sapkowski', 1, 1),
+    ('The Last Wish', 'Andrzej Sapkowski', 1, 6),
     ('Lord of Chaos', 'Robert Jordan', 7, 14),
     ('Jonathan Strange and Mr. Norell', 'Susanna Clarke', 1, 1);
 
