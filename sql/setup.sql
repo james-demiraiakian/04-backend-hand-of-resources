@@ -37,6 +37,13 @@ CREATE TABLE schools (
     level TEXT NOT NULL
 );
 
+INSERT INTO
+    schools (name, city, level)
+VALUES
+    ('Palm Springs High school', 'Palm Springs', 'High School'),
+    ('Alchemy Code Lab', 'Portland', 'Trade School'),
+    ('Arizona State University', 'Tempe', 'University');
+
 CREATE TABLE juices (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     type TEXT NOT NULL,
