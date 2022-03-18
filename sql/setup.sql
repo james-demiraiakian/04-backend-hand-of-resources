@@ -50,6 +50,13 @@ CREATE TABLE juices (
     blend BOOLEAN NOT NULL
 );
 
+INSERT INTO
+    juices (type, blend)
+VALUES
+    ('Orange', false),
+    ('Cranberry', true),
+    ('Grapefruit', false);
+
 CREATE TABLE foods (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name TEXT NOT NULL,
