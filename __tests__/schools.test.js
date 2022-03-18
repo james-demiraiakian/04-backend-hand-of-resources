@@ -20,9 +20,7 @@ describe('04-backend-hand-of-resources schools routes', () => {
       level: 'Community College',
     };
 
-    const res = await (
-      await request(app).post('/api/v1/schools')
-    ).send(expected);
+    const res = await request(app).post('/api/v1/schools').send(expected);
 
     expect(res.body).toEqual({ id: expect.any(Number), ...expected });
   });
@@ -54,7 +52,7 @@ describe('04-backend-hand-of-resources schools routes', () => {
       city: 'Palm Springs',
       level: 'High School',
     };
-    const res = await await request(app)
+    const res = await request(app)
       .patch('/api/v1/schools/1')
       .send({ name: 'Palm Springs High School' });
 
