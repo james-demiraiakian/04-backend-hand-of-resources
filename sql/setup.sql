@@ -63,3 +63,9 @@ CREATE TABLE foods (
     country TEXT NOT NULL,
     meal TEXT NOT NULL
 );
+
+INSERT INTO
+    foods (name, country, meal)
+VALUES
+    ('Tacos', 'Mexico', 'Breakfast'),
+    ('Sushi', 'Japan', 'Dinner');
